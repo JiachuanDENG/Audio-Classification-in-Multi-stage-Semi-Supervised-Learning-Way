@@ -33,8 +33,14 @@ https://www.kaggle.com/daisukelab/creating-fat2019-preprocessed-data
 #### Stage 1. Fine Tune
 Started from Model 0 which is trained in Stage 0, we train the model again on the curated dataset.
 
-#### Filter Noisy Data
+#### Stage 1.5. Filter Noisy Data
 Using Model 1 which is trained in Stage 1, we can filter out parts of noisy data which we are confident that its corresponding labels are correct. At the end of this operation, we will get: ***1***. labeled data 
 (consists of curated data and noisy data we are confident on its labels) and ***2***. unlabeled data (noisy data that we are inconfident on its labels)
 
 #### Stage 2. Semi-Supervised Learning
+Both ***labeled data*** {x<sub>l</sub>, y<sub>l</sub>} and ***unlabeled data*** {x<sub>u</sub>} will be used in this stage. Before the input data feeding into classifier, a stochastic data augmentation is required. Here we use [!SpecAugment](https://ai.googleblog.com/2019/04/specaugment-new-data-augmentation.html) as the augmentation <br/>
+***Loss*** function consists of two parts: </br>
+***1.*** For {x<sub>l</sub>, y<sub>l</sub>} BCELoss will be calculated</br>
+***2.*** For both {x<sub>l</sub>} and {x<sub>u</sub>} will do stochastic augmentation by 2 times: Take x<sub>l</sub> for example ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/20760190/59935231-36b22200-9402-11e9-927e-d559d68d6f68.gif)
+, where f<sub>&theta;</sub> refers to the classifier and ***g*** refers to data augmentation function. Then the squared difference loss will be calculated on the model outputs: ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/20760190/59935230-36b22200-9402-11e9-8479-21ce5af04dce.gif) The main idea of this loss is to regularize the network such that it generates about the same outputs for the same data input that undergoes data augmentation.
+
