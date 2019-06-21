@@ -38,7 +38,7 @@ Using Model 1 which is trained in Stage 1, we can filter out parts of noisy data
 (consists of curated data and noisy data we are confident on its labels) and ***2***. unlabeled data (noisy data that we are inconfident on its labels)
 
 #### Stage 2. Semi-Supervised Learning
-Both ***labeled data*** {x<sub>l</sub>, y<sub>l</sub>} and ***unlabeled data*** {x<sub>u</sub>} will be used in this stage. Before the input data feeding into classifier, a stochastic data augmentation is required. Here we use [!SpecAugment](https://ai.googleblog.com/2019/04/specaugment-new-data-augmentation.html) as the augmentation <br/>
+Both ***labeled data*** {x<sub>l</sub>, y<sub>l</sub>} and ***unlabeled data*** {x<sub>u</sub>} will be used in this stage. Before the input data feeding into classifier, a stochastic data augmentation is required. Here we use [SpecAugment](https://ai.googleblog.com/2019/04/specaugment-new-data-augmentation.html) as the augmentation <br/>
 ***Loss*** function consists of two parts: </br>
 ***1.*** For {x<sub>l</sub>, y<sub>l</sub>} BCELoss will be calculated</br>
 ***2.*** For both {x<sub>l</sub>} and {x<sub>u</sub>} will do stochastic augmentation by 2 times: Take x<sub>l</sub> for example ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/20760190/59935231-36b22200-9402-11e9-927e-d559d68d6f68.gif)
