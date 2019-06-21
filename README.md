@@ -42,5 +42,5 @@ Both ***labeled data*** {x<sub>l</sub>, y<sub>l</sub>} and ***unlabeled data*** 
 ***Loss*** function consists of two parts: </br>
 ***1.*** For {x<sub>l</sub>, y<sub>l</sub>} BCELoss will be calculated</br>
 ***2.*** For both {x<sub>l</sub>} and {x<sub>u</sub>} will do stochastic augmentation by 2 times: Take x<sub>l</sub> for example ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/20760190/59935231-36b22200-9402-11e9-927e-d559d68d6f68.gif)
-, where f<sub>&theta;</sub> refers to the classifier and ***g*** refers to data augmentation function. Then the squared difference loss will be calculated on the model outputs: ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/20760190/59935230-36b22200-9402-11e9-8479-21ce5af04dce.gif) The main idea of this loss is to regularize the network such that it generates about the same outputs for the same data input that undergoes data augmentation.
+, where f<sub>&theta;</sub> refers to the classifier and ***g*** refers to data augmentation function. Then the squared difference loss will be calculated on the model outputs: ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/20760190/59935230-36b22200-9402-11e9-8479-21ce5af04dce.gif).  The main idea of this loss is to regularize the network such that it generates about the same outputs for the same data input that undergoes data augmentation.
 
