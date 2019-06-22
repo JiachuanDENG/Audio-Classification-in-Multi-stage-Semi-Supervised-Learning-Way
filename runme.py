@@ -32,11 +32,11 @@ os.system('CUDA_VISIBLE_DEVICES=0 python3 test.py {}'.format(os.path.join(config
 
 
 
-based on model trained in stage 1, filter data from noisy data to expand labeled data
+# based on model trained in stage 1, filter data from noisy data to expand labeled data
 os.system('python3 filterout_noisysamples.py')
 
-stage 2
-using semi-supervised learning train on curated train data and noisy data
+# stage 2
+# using semi-supervised learning train on curated train data and noisy data
 os.system('CUDA_VISIBLE_DEVICES=0 python3 run_semisupervised.py')
 # test 0.836 -> 0.816
 print('Testing after STAGE 2 ...')
