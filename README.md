@@ -8,7 +8,7 @@ Given a wav file (in variable length), predict its corresponding label(s), each 
 ## Data Set:
 Original Dataset can be found in Kaggle: https://www.kaggle.com/c/freesound-audio-tagging-2019/data.
 
-To save time in data preprocessing, we also use the processed dataset (converting raw wav data to numpy matrix with Logmel transformation)https://www.kaggle.com/daisukelab/fat2019_prep_mels1
+To save time in data preprocessing, we also use the processed dataset (converting raw wav data to numpy matrix with Logmel transformation) https://www.kaggle.com/daisukelab/fat2019_prep_mels1
 
 The dataset consists of both curated data (with accurate labels), and noisy data (with labels, but not sure whether accurate or not). Noisy data size is much larger than curated data size.
 
@@ -56,4 +56,9 @@ And here is the results for each stage:
 | Stage 0 |  0.285 | 0.282
 | Stage 1  | 0.828 | 0.791
 | Stage 2 | 0.836 | 0.816
+
+### Run The Code
+1. make sure you place correct data path in config.ini, all the data we use can be found in https://www.kaggle.com/c/freesound-audio-tagging-2019/data and https://www.kaggle.com/daisukelab/fat2019_prep_mels1
+2. one-click-run: python3 runme.py. You can find out the order of running all the codes in this script.
+
 
