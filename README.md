@@ -16,7 +16,7 @@ The dataset consists of both curated data (with accurate labels), and noisy data
 ### Model
 In our code, we have implemented multiple models(CNN, CNN+LSTM, ResNet), for simplicity, experiments are done based on CNN model by default.
 
-Since CNN type model only allow fixed length input, while the data input length in our dataset is variable, we need to cut the long input audio into segments with fixed length, 
+Since CNN type model only allow fixed length input, while the data input length in our dataset is variable, we need to cut the long input audio into segments with fixed length (padding if necessary), 
 and use the average of each segment's prediction as final prediction of the original audio data.
 
 
